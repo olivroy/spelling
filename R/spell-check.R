@@ -170,7 +170,7 @@ spell_check_test <- function(vignettes = TRUE, error = FALSE, lang = NULL, skip_
     not_cran <- Sys.getenv('NOT_CRAN')
     # See logic in tools:::config_val_to_logical
     if(is.na(match(tolower(not_cran), c("1", "yes", "true"))))
-      return(NULL)
+      return(cat("All Done!\n"))
   }
   out_save <- readLines(system.file("templates/spelling.Rout.save", package = 'spelling'))
   code <- format_syntax(readLines("spelling.R"))
